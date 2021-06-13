@@ -6,8 +6,8 @@ import db from '../config';
 
 
 export default class AskScreen extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
       this.state={
         userId:firebase.auth().currentUser.email,
         askerId:this.props.navigation.getParam("details")["question"],

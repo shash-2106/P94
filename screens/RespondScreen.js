@@ -43,13 +43,13 @@ export default class RespondScreen extends React.Component {
     return (
       <ListItem
         key={i}
-        title={item.q}
+        title={item.question}
         subtitle={item.topic}
         titleStyle={{ color: 'black', fontWeight: 'bold' }}
        
         rightElement={
             <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Answer", {"details":item})}}>
-              <Text style={{color:'#ffff'}}>View</Text>
+              <Text style={{color:'blue'}}>View</Text>
             </TouchableOpacity>
           }
         bottomDivider
