@@ -49,7 +49,7 @@ export default class RespondScreen extends React.Component {
        
         rightElement={
             <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Answer", {"details":item})}}>
-              <Text style={{color:'blue'}}>View</Text>
+              <Text style={styles.signUp}>View</Text>
             </TouchableOpacity>
           }
         bottomDivider
@@ -84,3 +84,49 @@ export default class RespondScreen extends React.Component {
 }
 }
 
+const styles = StyleSheet.create({
+  textBox:{
+      width:250,
+      height:55,
+      backgroundColor:'#ffeb3b',
+      borderWidth:3,
+      borderColor:'#1C9ed4',
+      alignContent:'center',
+      justifyContent:'center',
+      padding:-5,
+      borderRadius:30,
+      margin:10,
+      alignSelf:'center'
+  },
+  signUp:{
+      width:150,
+      height:40,
+      backgroundColor:'#e045a5',
+      alignContent:'center',
+      justifyContent:'center',
+      padding:5,
+      borderRadius:25,
+      marginTop:-30,
+      alignSelf:'center',
+      borderWidth:3,
+      borderColor:'black'
+  },
+  login:{
+      width:150,
+      height:40,
+      backgroundColor:'#e045a5',
+      alignContent:'center',
+      justifyContent:'center',
+      padding:5,
+      borderRadius:25,
+      margin:10,
+      alignSelf:'center',
+      borderWidth:3,
+      borderColor:'black'
+  },
+  text:{
+      color:'white',
+    
+      alignSelf:'center'
+  }
+})

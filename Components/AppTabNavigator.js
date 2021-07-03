@@ -6,6 +6,7 @@ import ResponseScreen from '../screens/ResponseScreen';
 import {AppStackNavigator} from '../Components/AppStackNavigator';
 
 export const AppTabNavigator = createBottomTabNavigator({
-    AskScreen : {screen:AppStackNavigator},
-    ResponseScreen : {screen:ResponseScreen}
+    AskScreen : {screen:AskScreen},
+    ResponseScreen : {screen:ResponseScreen},
+    Respond:{screen:AppStackNavigator}
 })

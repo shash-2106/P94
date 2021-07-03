@@ -51,20 +51,20 @@ export default class SettingScreen extends React.Component{
                
                 <View style={styles.formContainer}>
            
-                <TextInput value={this.state.firstName} style={styles.formTextInput} maxLength={8} placeholder={"First name"} onChangeText={(text)=>{this.setState({
+                <TextInput value={this.state.firstName} style={styles.signUp} maxLength={8} placeholder={"First name"} onChangeText={(text)=>{this.setState({
                     firstName:text
                 })}}></TextInput>
-                <TextInput value={this.state.lastName} style={styles.formTextInput}  maxLength={8} placeholder={"Last name"} onChangeText={(text)=>{this.setState({
+                <TextInput value={this.state.lastName} style={styles.signUp}  maxLength={8} placeholder={"Last name"} onChangeText={(text)=>{this.setState({
                     lastName:text
                 })}}></TextInput>
-                <TextInput value={this.state.contact} style={styles.formTextInput} keyboardType={'numeric'}  maxLength={10} placeholder={"Contact"} onChangeText={(text)=>{this.setState({
+                <TextInput value={this.state.contact} style={styles.signUp} keyboardType={'numeric'}  maxLength={10} placeholder={"Contact"} onChangeText={(text)=>{this.setState({
                     contact:text
                 })}}></TextInput>
-                <TextInput value={this.state.address} style={styles.formTextInput}  multiline={true} placeholder={"Address"} onChangeText={(text)=>{this.setState({
+                <TextInput value={this.state.address} style={styles.signUp}  multiline={true} placeholder={"Address"} onChangeText={(text)=>{this.setState({
                     address:text
                 })}}></TextInput>
-                <TouchableOpacity style={styles.button} onPress={()=>{this.updateUserDetails()}}>
-                    <Text style={styles.buttonText}>Save</Text>
+                <TouchableOpacity style={styles.login} onPress={()=>{this.updateUserDetails()}}>
+                    <Text style={styles.text}>Save</Text>
                 </TouchableOpacity>
             </View>
             </View>
@@ -72,7 +72,48 @@ export default class SettingScreen extends React.Component{
     }
 }
 const styles = StyleSheet.create({
-     container : 
-     { flex:1,
-         alignItems: 'center',
-          justifyContent: 'center' }, formContainer:{ flex:1, width:'100%', alignItems: 'center' }, formTextInput:{ width:"75%", height:35, alignSelf:'center', borderColor:'#ffab91', borderRadius:10, borderWidth:1, marginTop:20, padding:10, }, button:{ width:"75%", height:50, justifyContent:'center', alignItems:'center', borderRadius:10, backgroundColor:"#ff5722", shadowColor: "#000", shadowOffset: { width: 0, height: 8, }, shadowOpacity: 0.44, shadowRadius: 10.32, elevation: 16, marginTop:20 }, buttonText:{ fontSize:25, fontWeight:"bold", color:"#fff" } })
+    textBox:{
+        width:250,
+        height:55,
+        backgroundColor:'#ffeb3b',
+        borderWidth:3,
+        borderColor:'#1C9ed4',
+        alignContent:'center',
+        justifyContent:'center',
+        padding:-5,
+        borderRadius:30,
+        margin:10,
+        alignSelf:'center'
+    },
+    signUp:{
+        width:150,
+        height:40,
+        backgroundColor:'#e045a5',
+        alignContent:'center',
+        justifyContent:'center',
+        padding:5,
+        borderRadius:25,
+        marginTop:-30,
+        alignSelf:'center',
+        borderWidth:3,
+        borderColor:'black'
+    },
+    login:{
+        width:150,
+        height:40,
+        backgroundColor:'#e045a5',
+        alignContent:'center',
+        justifyContent:'center',
+        padding:5,
+        borderRadius:25,
+        margin:10,
+        alignSelf:'center',
+        borderWidth:3,
+        borderColor:'black'
+    },
+    text:{
+        color:'white',
+      
+        alignSelf:'center'
+    }
+})

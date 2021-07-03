@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity,TextInput, KeyboardAvoidingView, ScrollView, Modal } from 'react-native';
 import firebase from 'firebase';
 import db from '../config';
-import {RFValue} from 'react-native-responsive-fontsize';
+
 import Animation from '../Components/Animation';
 
 export default class SignupLoginScreen extends React.Component{
@@ -23,7 +23,7 @@ export default class SignupLoginScreen extends React.Component{
    logIn=(username,password)=>{
       
         firebase.auth().signInWithEmailAndPassword(username,password).then(()=>{
-            alert("here");
+           
             this.props.navigation.navigate("AskScreen")
         }
 
@@ -168,7 +168,7 @@ export default class SignupLoginScreen extends React.Component{
         },
         text:{
             color:'white',
-            fontSize:RFValue(20),
+           
             alignSelf:'center'
         }
     })
