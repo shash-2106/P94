@@ -48,7 +48,7 @@ uploadImage=async(uri,imageName)=>{
     var response = await fetch(uri);
     var blob = await response.blob()
     var ref = firebase.storage().ref().child("user_profiles/"+imageName);
-    return ref.put(blob).then((repsonse)=>{this.fetchImage(imageName)})
+    return ref.put(blob).then((response)=>{this.fetchImage(imageName)})
 }
 fetchImage=(imageName)=>{
   var storageRef = firebase.storage().ref().child("user_profiles/"+imageName)
@@ -64,7 +64,7 @@ fetchImage=(imageName)=>{
     render(){
         return(
             <View style={{flex:1}}>
-                  <View style={{flex:0.5,alignItems:'center',backgroundColor:'orange'}}>
+                  <View style={{flex:0.5,alignItems:'center',backgroundColor:'#ffeb3b'}}>
                     <Avatar rounded source={{uri:this.state.image}} size="medium" containerStyle={styles.imageContainer} showEditButton onPress={()=>{this.selectPicture()}}></Avatar>
                     <Text style={{fontWeight:'100',fontSize:20,paddingTop:10}}>{this.state.name}</Text>
                  </View>
@@ -74,7 +74,7 @@ fetchImage=(imageName)=>{
                 
             </View>
             <View style={styles.logOutContainer}>
-            <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Signup") 
+            <TouchableOpacity onPress={()=>{this.props.navigation.navigate("SignUp") 
         firebase.auth().signOut()}} style={styles.logOutButton}>
                 <Text style={styles.logOutText}>Log Out</Text>
             </TouchableOpacity>

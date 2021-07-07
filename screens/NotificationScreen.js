@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, FlatList,TouchableOpacity } from 'react-native'
 import { ListItem, Icon } from 'react-native-elements'
 import firebase from 'firebase';
 import db from '../config'
-
+import MyHeader from '../Components/MyHeader';
 
 export default class MyNotificationScreen extends React.Component{
     constructor(){
@@ -47,7 +47,7 @@ export default class MyNotificationScreen extends React.Component{
     render(){
         return(
 <View style={{flex:1}}>
-
+<MyHeader title={"Notifications"} navigation={this.props.navigation}></MyHeader>
 <View style={{flex:0.9}}>
 {this.state.allNotifications.length==0
 ?(<View><Text >You have no notifications</Text></View>):

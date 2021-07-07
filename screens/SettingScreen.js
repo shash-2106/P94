@@ -5,6 +5,8 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import db from '../config';
 import firebase from 'firebase';
 import { TouchableOpacity } from 'react-native';
+import MyHeader from '../Components/MyHeader'
+import {Header} from 'react-native-elements'
 
 export default class SettingScreen extends React.Component{
     constructor(){
@@ -48,7 +50,7 @@ export default class SettingScreen extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-               
+               <Header title={"Settings"} style={{backgroundColor:'#e045a5'}}></Header>
                 <View style={styles.formContainer}>
            
                 <TextInput value={this.state.firstName} style={styles.signUp} maxLength={8} placeholder={"First name"} onChangeText={(text)=>{this.setState({
@@ -93,24 +95,12 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         padding:5,
         borderRadius:25,
-        marginTop:-30,
+        marginTop:30,
         alignSelf:'center',
         borderWidth:3,
         borderColor:'black'
     },
-    login:{
-        width:150,
-        height:40,
-        backgroundColor:'#e045a5',
-        alignContent:'center',
-        justifyContent:'center',
-        padding:5,
-        borderRadius:25,
-        margin:10,
-        alignSelf:'center',
-        borderWidth:3,
-        borderColor:'black'
-    },
+   
     text:{
         color:'white',
       
